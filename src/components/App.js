@@ -17,6 +17,7 @@ import SingleProduct from './pages/SingleProduct';
 import RouteDiv from './pages/UserDashboard/RouteDiv';
 import Explore from './pages/Explore';
 import AboutUs from './sections/AboutUs';
+import NotFound from './sections/NotFound';
 
 
 const App = () => {
@@ -31,8 +32,10 @@ const App = () => {
           <PrivateRoute path="/purchase/:Id"><SingleProduct /></PrivateRoute>
           <Route path="/home"><Home /></Route>
           <Route path="/about"><AboutUs /></Route>
+          <Route path="*">
+            <NotFound />
+          </Route>
           <Route exact path="/"><Home /></Route>
-          <Route path="*"><Home /></Route>
         </Switch>
       </Router>
     </AuthProvider>

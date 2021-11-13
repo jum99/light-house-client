@@ -3,9 +3,9 @@ import AboutImg from '../../images/fp.jpeg';
 import Header from './Header';
 
 const AboutUs = () => {
+
     return (
         <div className="container">
-            <Header />
             <div className="row mt-5 align-items-center">
                 <div className="text-center mt-5 mb-3">
                     <h1>About Us</h1>
