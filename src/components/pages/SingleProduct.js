@@ -3,26 +3,26 @@ import { useParams } from 'react-router';
 import Header from './../sections/Header';
 import { useAuth } from './../../contexts/AuthContext';
 import { useForm } from 'react-hook-form';
-import {  useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useLocation } from 'react-router';
 
 const SingleProduct = () => {
 
     const { Id } = useParams();
     const [productDetail, setProductDetail] = useState({});
-    const { register,reset, handleSubmit, watch, formState: { errors } } = useForm();
-    const {currentUser} = useAuth();
-   
+    const { register, reset, handleSubmit, watch, formState: { errors } } = useForm();
+    const { currentUser } = useAuth();
+
     const history = useHistory();
     const location = useLocation();
     let { from } = location.state || { from: { pathname: "/dashboard/userOrder" } };
 
-    useEffect(() => {       
-                  
-        fetch(`http://localhost:5000/pd/${Id}`)
+    useEffect(() => {
+
+        fetch(`https://fast-dawn-24079.herokuapp.com/pd/${Id}`)
             .then(res => res.json())
-            .then(data => setProductDetail(data))  
-                  
+            .then(data => setProductDetail(data))
+
     }, [Id])
     const { name, imageURL, price, description } = productDetail;
 
@@ -33,15 +33,15 @@ const SingleProduct = () => {
             productName: productDetail.name,
             productPrice: productDetail.price,
             productImg: productDetail.img,
-          name: data.name,
-          email: data.email,
-          streetAddress: data.streetAddress,
-          state: data.state,
-          city: data.city,
-          zipCode: data.zipCode,
-          phone: data.phone,
-          orderTime: new Date(),
-          
+            name: data.name,
+            email: data.email,
+            streetAddress: data.streetAddress,
+            state: data.state,
+            city: data.city,
+            zipCode: data.zipCode,
+            phone: data.phone,
+            orderTime: new Date(),
+
 
         }
 
@@ -50,24 +50,24 @@ const SingleProduct = () => {
         history.replace(from);
 
 
-        const url = `http://localhost:5000/addOrder`
+        const url = `https://fast-dawn-24079.herokuapp.com/addOrder`
         console.log(orderData)
         fetch(url, {
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json'
-          },
-          body: JSON.stringify(orderData)
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(orderData)
         })
-        .then(res => res.json())
-        .then(data => {
-            if(data){
-                alert('your order placed successfully');
-               
-            }
-        })
-          
-      };
+            .then(res => res.json())
+            .then(data => {
+                if (data) {
+                    alert('your order placed successfully');
+
+                }
+            })
+
+    };
 
 
 
@@ -108,60 +108,60 @@ const SingleProduct = () => {
 
                 {/* shipping form section */}
                 <div className="shadow p-5 mt-5 mb-5">
-                <h2 className="mb-5 ">Shipping address</h2>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    
-                    <div className="row ">
-                        <div className="col-md-6">
-                            <div className="mb-3">
-                                <label for="exampleInputEmail1" className="form-label">Full name</label>
-                                <input  defaultValue={currentUser.displayName} type="text" className="form-control" name="name"  {...register("name")} placeholder=" Full Name" required />
+                    <h2 className="mb-5 ">Shipping address</h2>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+
+                        <div className="row ">
+                            <div className="col-md-6">
+                                <div className="mb-3">
+                                    <label for="exampleInputEmail1" className="form-label">Full name</label>
+                                    <input defaultValue={currentUser.displayName} type="text" className="form-control" name="name"  {...register("name")} placeholder=" Full Name" required />
+                                </div>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="mb-3">
+                                    <label for="exampleInputEmail1" className="form-label">Email address</label>
+                                    <input defaultValue={currentUser.email} type="email" className="form-control" name="email"  {...register("email")} placeholder="name@example.com" required />
+                                </div>
                             </div>
                         </div>
-                        <div className="col-md-6">
                         <div className="mb-3">
-                                <label for="exampleInputEmail1" className="form-label">Email address</label>
-                                <input  defaultValue={currentUser.email}  type="email" className="form-control" name="email"  {...register("email")} placeholder="name@example.com" required />
+                            <label for="exampleInputEmail1" className="form-label">Street Address</label>
+                            <input type="text" className="form-control" name="streetAddress"  {...register("streetAddress")} placeholder="House number and street name" required />
+                        </div>
+                        <div className="row ">
+                            <div className="col-md-6">
+                                <div className="mb-3">
+                                    <label for="exampleInputEmail1" className="form-label">State</label>
+                                    <input type="text" className="form-control" name="state"  {...register("state")} placeholder=" state" required />
+                                </div>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="mb-3">
+                                    <label for="exampleInputEmail1" className="form-label">Town/City</label>
+                                    <input type="text" className="form-control" name="city"  {...register("city")} placeholder=" city" required />
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="mb-3">
-                        <label for="exampleInputEmail1" className="form-label">Street Address</label>
-                        <input  type="text" className="form-control" name="streetAddress"  {...register("streetAddress")} placeholder="House number and street name" required />
-                    </div>
-                    <div className="row ">
-                        <div className="col-md-6">
-                            <div className="mb-3">
-                                <label for="exampleInputEmail1" className="form-label">State</label>
-                                <input  type="text" className="form-control" name="state"  {...register("state")} placeholder=" state" required />
+                        <div className="row ">
+                            <div className="col-md-6">
+                                <div className="mb-3">
+                                    <label for="exampleInputEmail1" className="form-label">Zip code</label>
+                                    <input type="text" className="form-control" name="zipCode"  {...register("zipCode")} placeholder=" zip code" required />
+                                </div>
+                            </div>
+                            <div className="col-md-6">
+                                <div className="mb-3">
+                                    <label for="exampleInputEmail1" className="form-label">Phone number</label>
+
+                                    <input type="tel" className="form-control" name="phone"  {...register("phone")} placeholder="123-45-6785" required />
+                                </div>
                             </div>
                         </div>
-                        <div className="col-md-6">
-                        <div className="mb-3">
-                                <label for="exampleInputEmail1" className="form-label">Town/City</label>
-                                <input  type="text" className="form-control" name="city"  {...register("city")} placeholder=" city"  required />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row ">
-                        <div className="col-md-6">
-                            <div className="mb-3">
-                                <label for="exampleInputEmail1" className="form-label">Zip code</label>
-                                <input  type="text" className="form-control" name="zipCode"  {...register("zipCode")} placeholder=" zip code" required />
-                            </div>
-                        </div>
-                        <div className="col-md-6">
-                        <div className="mb-3">
-                                <label for="exampleInputEmail1" className="form-label">Phone number</label>
-                                
-                                <input  type="tel" className="form-control" name="phone"  {...register("phone")} placeholder="123-45-6785"  required/>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" className="btn btn-fruit">Submit</button>
-                </form>
-            </div>
+
+                        <button type="submit" className="btn btn-fruit">Submit</button>
+                    </form>
+                </div>
             </div>
         </>
     );

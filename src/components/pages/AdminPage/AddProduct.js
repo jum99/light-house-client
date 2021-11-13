@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 
 const AddProduct = () => {
 
-    const { register, reset, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, reset, handleSubmit } = useForm();
     const [imageURL, setImageURL] = useState(null);
 
     const onSubmit = (data) => {
@@ -22,7 +22,7 @@ const AddProduct = () => {
         alert('New product added');
         reset();
 
-        const url = `http://localhost:5000/addProduct`
+        const url = `https://fast-dawn-24079.herokuapp.com/addProduct`
         console.log(addProducts)
         fetch(url, {
             method: 'POST',

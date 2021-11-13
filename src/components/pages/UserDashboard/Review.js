@@ -20,7 +20,7 @@ const Review = () => {
         alert('Review added');
         reset();
 
-        const url = `http://localhost:5000/addReview`
+        const url = `https://fast-dawn-24079.herokuapp.com/addReview`
         console.log(reviewData)
         fetch(url, {
             method: 'POST',

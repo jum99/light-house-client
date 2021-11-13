@@ -14,7 +14,7 @@ const MakeAdmin = () => {
     alert('New Admin create');
     reset();
 
-    const url = `http://localhost:5000/addAdmin`
+    const url = `https://fast-dawn-24079.herokuapp.com/addAdmin`
     console.log(adminData)
     fetch(url, {
       method: 'POST',
