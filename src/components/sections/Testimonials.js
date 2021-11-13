@@ -39,7 +39,7 @@ const Testimonials = () => {
             <div className="row ">
                 <div className="text-center mb-4">
                     <div className="text-center mt-5 mb-3">
-                        <h1>We love our clients</h1>
+                        <h1>Clients Review</h1>
                         <p className="fst-italic color-fruit">The best testimonials</p>
                     </div>
                 </div>
