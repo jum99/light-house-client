@@ -1,0 +1,29 @@
+.logo-img{
+    width: 300px;
+    height: 90px;
+}
+
+.header-bg{
+background-color: #4F9655;
+     
+}
+
+.dashboard{
+    text-decoration: none;
+}
+
+.bottomLine{
+    border-bottom: 2px solid #105816;
+
+}
+
+.loginBtn{
+    border:none;
+   padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #50A35D;
+    color:white;
+    border-radius: 10px;
+}
