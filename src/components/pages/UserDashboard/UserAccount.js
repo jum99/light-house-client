@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../../style/UserAccount.css';
 import Logo from '../../../images/logo.png';
-// import RouteDiv from './RouteDiv';
 import { useRouteMatch } from 'react-router-dom';
 import { useAuth } from './../../../contexts/AuthContext';
 
@@ -36,7 +35,10 @@ const UserAccount = () => {
 
                 <nav id="sidebar">
                     <div className="sidebar_logo">
-                        <img src={Logo} alt="" className="img-fluid" />
+                        <img style={{
+                            width: '225px',
+                            height: '60px'
+                        }} src={Logo} alt="" className="img-fluid" />
                     </div>
                     <div className="sidebarWrapper">
                         <div className="sidebarMenu">
@@ -91,25 +93,15 @@ const UserAccount = () => {
 
                                 }
 
-
-
                                 <div className="d-flex " style={{ marginTop: '50%' }}>
 
                                     <Link onClick={logout} to="/login" >  <i className="fas fa-sign-out-alt color-fruit fs-15"></i></Link>
                                     <Link to="/home" className="ms-auto"> <i className="fas fa-home color-fruit  fs-15"></i></Link>
                                 </div>
-
-
                             </ul>
                         </div>
                     </div>
-
                 </nav>
-
-                {/* <div className="wrapper">
-               <RouteDiv/> 
-                   </div>        */}
-
             </div>
 
         </>

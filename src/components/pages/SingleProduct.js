@@ -74,8 +74,9 @@ const SingleProduct = () => {
 
     return (
         <>
+            <Header />
             <div className="container">
-                <Header />
+
                 <div className="row mt-5 align-items-center">
                     <div className="col-md-4">
                         <img src={imageURL} alt="" className="img-fluid" />
@@ -159,7 +160,7 @@ const SingleProduct = () => {
                             </div>
                         </div>
 
-                        <button type="submit" className="btn btn-fruit">Submit</button>
+                        <button type="submit" className="btn regular-button">Submit</button>
                     </form>
                 </div>
             </div>

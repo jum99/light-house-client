@@ -41,7 +41,7 @@ const MakeAdmin = () => {
           <input type="password" name="password" class="form-control" placeholder="password" {...register("password")} required />
         </div>
 
-        <button type="submit" className="btn btn-fruit  mt-3">Submit</button>
+        <button type="submit" className="btn regular-button  mt-3">Submit</button>
       </form>
     </div>
   );

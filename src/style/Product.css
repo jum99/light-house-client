@@ -1,3 +1,16 @@
-.card{
-    background-color: rgb(214, 211, 214);
+.card {
+    background-color: #e2f2ef;
+    border: none;
+    margin-top: 15px;
+    width: 23rem;
+}
+
+.regular-button {
+    background-color: rgb(4, 4, 91);
+    color: white;
+    padding: 10px 30px;
+}
+
+.regular-button:hover {
+    color: white;
 }

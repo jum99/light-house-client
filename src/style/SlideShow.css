@@ -1,11 +1,16 @@
-.shop_now{
-    background-color: #50A35D;
-    color: white;
-    padding:10px 40px;
-    margin-top:10px;
+.banner {
+    padding: 100px;
+    background-color: #e2f2ef;
 }
 
-.slide-img{
+.shop_now {
+    background-color: rgb(4, 4, 91);
+    color: white;
+    padding: 10px 40px;
+    margin-top: 10px;
+}
+
+.slide-img {
     width: 400px;
     height: 350px;
     margin: 5px;

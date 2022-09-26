@@ -37,39 +37,39 @@ const SignUp = () => {
     }
 
     return (
-        <div className="login-form">
-            <div className="center">
-                <h1>SignUp</h1>
-                <form onSubmit={handleSubmit}>
-                    <div className="text_field">
-                        <input className="text-white" type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
-                        <span></span>
-                        <label>Full Name</label>
-                    </div>
-                    <div className="text_field">
-                        <input className="text-white" type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                        <span></span>
-                        <label>Email Address</label>
-                    </div>
-                    <div className="text_field">
-                        <input className="text-white" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-                        <span></span>
-                        <label>Password</label>
-                    </div>
-                    <div className="text_field">
-                        <input className="text-white" type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
-                        <span></span>
-                        <label>Confirm Password</label>
 
-                    </div>
-                    {error && <p className="pass mb-1 text-danger">{error}</p>}
-                    <input disabled={loading} type="submit" value="SignUp" />
-                    <div className="signup_link">
-                        Have a Account? <Link to="Login">Login</Link>
-                    </div>
-                </form>
-            </div>
+        <div className="center">
+            <h1>SignUp</h1>
+            <form onSubmit={handleSubmit}>
+                <div className="text_field">
+                    <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} required />
+                    <span></span>
+                    <label>Full Name</label>
+                </div>
+                <div className="text_field">
+                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+                    <span></span>
+                    <label>Email Address</label>
+                </div>
+                <div className="text_field">
+                    <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
+                    <span></span>
+                    <label>Password</label>
+                </div>
+                <div className="text_field">
+                    <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} required />
+                    <span></span>
+                    <label>Confirm Password</label>
+
+                </div>
+                {error && <p className="pass mb-1 text-danger">{error}</p>}
+                <input disabled={loading} type="submit" value="SignUp" />
+                <div className="signup_link">
+                    Have a Account? <Link to="Login">Login</Link>
+                </div>
+            </form>
         </div>
+
     );
 };
 

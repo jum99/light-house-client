@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 
 const Review = () => {
 
-    const { register, reset, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, reset, handleSubmit } = useForm();
     const [imageURL, setImageURL] = useState(null);
 
     const onSubmit = (data) => {
@@ -75,7 +75,7 @@ const Review = () => {
                                 <input
                                     type="text"
                                     className="form-control form-control-lg"
-                                    placeholder="ex. customer"
+                                    placeholder="Example: Customer"
                                     name="identity"
                                     {...register("identity")}
                                     required
@@ -101,13 +101,13 @@ const Review = () => {
                             row="4"
                             type="text"
                             className="form-control form-control-lg"
-                            placeholder="write your comment"
+                            placeholder="Write Your Comment"
                             name="comment"
                             {...register("comment")}
                             required
                         />
                     </div>
-                    <button type="submit" className="btn btn-fruit  mt-3">Submit</button>
+                    <button type="submit" className="btn regular-button  mt-3">Submit</button>
                 </form>
             </div>
         </div>

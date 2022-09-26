@@ -12,12 +12,10 @@ import SignUp from './pages/SignUp';
 import PrivateRoute from './../privateRoute/PrivateRoute';
 import { AuthProvider } from './../contexts/AuthContext';
 import SingleProduct from './pages/SingleProduct';
-// import UserAccount from './pages/UserDashboard/UserAccount';
 import RouteDiv from './pages/UserDashboard/RouteDiv';
 import Explore from './pages/Explore';
 import AboutUs from './sections/AboutUs';
 import NotFound from './sections/NotFound';
-
 
 
 const App = () => {
@@ -25,15 +23,30 @@ const App = () => {
     <AuthProvider>
       <Router>
         <Switch>
-          <Route exact path="/"><Home /></Route>
-          <Route path="/home"><Home /></Route>
-          <PrivateRoute path="/dashboard"><RouteDiv /></PrivateRoute>
-          <Route path="/login"><Login /></Route>
-          <Route path="/signUp"><SignUp /></Route>
-          <PrivateRoute path="/explore"><Explore /></PrivateRoute>
-          <PrivateRoute path="/purchase/:Id"><SingleProduct /></PrivateRoute>
-
-          <Route path="/about"><AboutUs /></Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <PrivateRoute path="/dashboard">
+            <RouteDiv />
+          </PrivateRoute>
+          <Route path="/login">
+            <Login />
+          </Route>
+          <Route path="/signUp">
+            <SignUp />
+          </Route>
+          <PrivateRoute path="/explore">
+            <Explore />
+          </PrivateRoute>
+          <PrivateRoute path="/purchase/:Id">
+            <SingleProduct />
+          </PrivateRoute>
+          <Route path="/about">
+            <AboutUs />
+          </Route>
           <Route path="*">
             <NotFound />
           </Route>

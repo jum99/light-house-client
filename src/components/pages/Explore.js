@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Header from './../sections/Header';
 import { Link } from 'react-router-dom';
+import Footer from '../sections/Footer';
 
 const Explore = () => {
 
@@ -14,16 +15,17 @@ const Explore = () => {
 
     return (
         <div>
+            <Header />
             <div className="container">
-                <Header />
-                <div className="row mt-5">
+
+                <div className="row mt-5 mb-5">
                     <h1 className="text-center">Our All Products</h1>
                     <hr className="mt-3 hr-style" />
                     {
                         product.slice(0, 10).map((item, index) => {
                             return (
                                 <div key={index} className="col-md-4 mt-3 d-flex justify-content-around">
-                                    <div className="card" style={{ width: "20rem" }}>
+                                    <div className="card">
                                         <div className="d-flex justify-content-center">
                                             <img src={item.imageURL} alt="" className="img-fluid  p-3" style={{ height: '200px', width: '200px' }} />
                                         </div>
@@ -31,7 +33,7 @@ const Explore = () => {
                                             <h5 className="card-title">{item.name}</h5>
                                             <p className="card-text">{item.shortDis}</p>
                                             <div className="d-flex align-items-center">
-                                                <Link to={`/purchase/${item._id}`} className="btn btn-fruit">Buy Now</Link>
+                                                <Link to={`/purchase/${item._id}`} className="btn regular-button">Buy Now</Link>
                                                 <h5 className="color-fruit ms-auto">${item.price}</h5>
                                             </div>
                                         </div>
@@ -42,6 +44,7 @@ const Explore = () => {
                     }
 
                 </div>
+
             </div>
         </div>
     );

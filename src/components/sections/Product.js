@@ -22,7 +22,7 @@ const Product = () => {
                     product.slice(0, 6).map((item, index) => {
                         return (
                             <div key={index} className="col-md-4 mt-3 d-flex justify-content-around">
-                                <div className="card" style={{ width: "20rem" }}>
+                                <div className="card">
                                     <div className="d-flex justify-content-center">
                                         <img src={item.imageURL} alt="" className="img-fluid  p-3" style={{ height: '200px', width: '200px' }} />
                                     </div>
@@ -30,7 +30,7 @@ const Product = () => {
                                         <h5 className="card-title">{item.name}</h5>
                                         <p className="card-text">{item.shortDis}</p>
                                         <div className="d-flex align-items-center">
-                                            <Link to={`/purchase/${item._id}`} className="btn btn-fruit">Buy Now</Link>
+                                            <Link to={`/purchase/${item._id}`} className="btn regular-button">Buy Now</Link>
                                             <h5 className="color-fruit ms-auto">${item.price}</h5>
                                         </div>
                                     </div>

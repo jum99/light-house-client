@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 
+
 const AddProduct = () => {
 
     const { register, reset, handleSubmit } = useForm();
@@ -59,13 +60,13 @@ const AddProduct = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-3">
                     <label for="exampleInputEmail1" className="form-label">Product Name</label>
-                    <input type="text" className="form-control" name="title" placeholder="product name" name="name" {...register("name")} required />
+                    <input type="text" className="form-control" name="title" placeholder="product name"  {...register("name")} required />
                 </div>
                 <div className="row ">
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label for="exampleInputEmail1" className="form-label">Price</label>
-                            <input type="number" className="form-control" name="name" placeholder=" price" name="price" {...register("price")} required />
+                            <input type="number" className="form-control" name="name" placeholder=" price" {...register("price")} required />
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -90,7 +91,7 @@ const AddProduct = () => {
                     <label for="exampleInputEmail1" className="form-label">Description</label>
                     <textarea type="text" className="form-control" placeholder="description" name="description" {...register("description")} required />
                 </div>
-                <button type="submit" className="btn btn-fruit">Submit</button>
+                <button type="submit" className="btn regular-button">Submit</button>
             </form>
         </div>
     );
