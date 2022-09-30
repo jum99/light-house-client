@@ -27,7 +27,6 @@ const ManageProduct = () => {
 
     return (
         <div className="admin-section">
-
             <div className=" mt-3">
                 <div className="d-flex">
                     <h2>Manage Products</h2>

@@ -4,9 +4,7 @@ import { useAuth } from './../../../contexts/AuthContext';
 
 const UserOrder = () => {
 
-
     const { currentUser } = useAuth();
-
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
@@ -34,7 +32,6 @@ const UserOrder = () => {
 
     return (
         <div className="admin-section">
-
             <div className=" mt-3">
                 <div className="d-flex">
                     <h2>My Orders</h2>

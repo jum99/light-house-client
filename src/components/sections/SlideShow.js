@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import '../../style/SlideShow.css';
 
 const SlideShow = () => {
+
     const banner = [
         {
             "id": 1,
@@ -33,11 +34,8 @@ const SlideShow = () => {
         setIndex(selectedIndex);
     };
 
-
     return (
-
         <div className='banner'>
-
             <Carousel fade activeIndex={index} onSelect={handleSelect} interval={4000}>
                 {
                     banner.map((item) => (
@@ -49,7 +47,7 @@ const SlideShow = () => {
                                     <h1 style={{ color: '#5E5D5D', textTransform: 'uppercase', fontWeight: '700', fontSize: '50px' }}>{item.title}</h1>
                                     <p style={{ color: '#747577' }}>{item.subTitle}</p>
                                     <div className="d-flex align-items-center">
-                                        <button type="button" className="btn  shop_now  me-5">Shop Now</button>
+                                        <button type="button" className="btn  shop_now text-white me-5">Shop Now</button>
                                     </div>
                                 </div>
                                 <div className="col-md-5">

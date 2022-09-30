@@ -1,23 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import Header from './../sections/Header';
 import { Link } from 'react-router-dom';
-import Footer from '../sections/Footer';
 
 const Explore = () => {
 
     const [product, setProduct] = useState([]);
+
     useEffect(() => {
         fetch('https://fast-dawn-24079.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProduct(data.reverse()))
     }, [])
 
-
     return (
         <div>
             <Header />
             <div className="container">
-
                 <div className="row mt-5 mb-5">
                     <h1 className="text-center">Our All Products</h1>
                     <hr className="mt-3 hr-style" />

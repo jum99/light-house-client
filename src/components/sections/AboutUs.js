@@ -1,8 +1,6 @@
 import React from 'react';
 import AboutImg from '../../images/fp.jpeg';
 import Header from './Header';
-// import Footer from './Footer';
-// import Header from './Header';
 
 const AboutUs = () => {
 

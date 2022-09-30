@@ -11,10 +11,9 @@ import ManageProduct from './../AdminPage/ManageProduct';
 import { useAuth } from './../../../contexts/AuthContext';
 import PrivateRoute from '../../../privateRoute/PrivateRoute';
 
-
 const RouteDiv = () => {
-    let { path } = useRouteMatch();
 
+    let { path } = useRouteMatch();
 
     const { currentUser } = useAuth();
     const [isAdmin, setIsAdmin] = useState(false);

@@ -4,12 +4,13 @@ import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 const Testimonials = () => {
 
-    const [testimonials, setTestimonials] = useState([])
+    const [testimonials, setTestimonials] = useState([]);
+
     useEffect(() => {
         fetch('https://fast-dawn-24079.herokuapp.com/allReview')
             .then(res => res.json())
             .then(data => setTestimonials(data))
-    }, [])
+    }, []);
 
     const options = {
         responsiveClass: true,

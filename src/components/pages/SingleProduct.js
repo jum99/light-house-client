@@ -10,22 +10,22 @@ const SingleProduct = () => {
 
     const { Id } = useParams();
     const [productDetail, setProductDetail] = useState({});
-    const { register, reset, handleSubmit, watch, formState: { errors } } = useForm();
+    const { register, reset, handleSubmit } = useForm();
     const { currentUser } = useAuth();
 
     const history = useHistory();
     const location = useLocation();
+
     let { from } = location.state || { from: { pathname: "/dashboard/userOrder" } };
 
     useEffect(() => {
-
         fetch(`https://fast-dawn-24079.herokuapp.com/pd/${Id}`)
             .then(res => res.json())
             .then(data => setProductDetail(data))
 
-    }, [Id])
-    const { name, imageURL, price, description } = productDetail;
+    }, [Id]);
 
+    const { name, imageURL, price, description } = productDetail;
 
     const onSubmit = data => {
         const orderData = {
@@ -40,18 +40,15 @@ const SingleProduct = () => {
             city: data.city,
             zipCode: data.zipCode,
             phone: data.phone,
-            orderTime: new Date(),
-
-
+            orderTime: new Date()
         }
 
         alert('Order completed');
         reset();
         history.replace(from);
 
-
         const url = `https://fast-dawn-24079.herokuapp.com/addOrder`
-        console.log(orderData)
+        // console.log(orderData);
         fetch(url, {
             method: 'POST',
             headers: {
@@ -62,21 +59,16 @@ const SingleProduct = () => {
             .then(res => res.json())
             .then(data => {
                 if (data) {
-                    alert('your order placed successfully');
-
+                    alert('Your order placed successfully');
                 }
             })
 
     };
 
-
-
-
     return (
         <>
             <Header />
             <div className="container">
-
                 <div className="row mt-5 align-items-center">
                     <div className="col-md-4">
                         <img src={imageURL} alt="" className="img-fluid" />
@@ -91,7 +83,6 @@ const SingleProduct = () => {
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
-
                             </div>
                             <p className="cursor-pointer">19 Customer review</p>
                         </div>
@@ -107,11 +98,9 @@ const SingleProduct = () => {
                     </div>
                 </div>
 
-                {/* shipping form section */}
                 <div className="shadow p-5 mt-5 mb-5">
                     <h2 className="mb-5 ">Shipping address</h2>
                     <form onSubmit={handleSubmit(onSubmit)}>
-
                         <div className="row ">
                             <div className="col-md-6">
                                 <div className="mb-3">

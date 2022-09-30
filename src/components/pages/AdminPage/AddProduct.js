@@ -1,8 +1,6 @@
-
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
-
 
 const AddProduct = () => {
 
@@ -16,9 +14,7 @@ const AddProduct = () => {
             category: data.category,
             shortDis: data.shortDis,
             description: data.description,
-            imageURL: imageURL,
-
-
+            imageURL: imageURL
         }
         alert('New product added');
         reset();
@@ -37,11 +33,11 @@ const AddProduct = () => {
 
     //image upload
     const handleImageUpload = event => {
-        console.log(event.target.files[0])
+
+        // console.log(event.target.files[0]);
         const imageData = new FormData();
         imageData.set('key', '2eef38a6bd018d8bc047bd3f5cc6b050');
         imageData.append('image', event.target.files[0])
-
 
         axios.post('https://api.imgbb.com/1/upload', imageData)
             .then(function (response) {
@@ -52,10 +48,8 @@ const AddProduct = () => {
             });
     }
 
-
     return (
         <div className="admin-section">
-
             <h2 className="text-center ">Add Product</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-3">
@@ -74,7 +68,6 @@ const AddProduct = () => {
                             <label for="exampleInputEmail1" className="form-label"> Category</label>
                             <select name="category"  {...register("category")} required type="text" className="form-select">
                                 <option value="1">Fancy Decorative Lights</option>
-
                             </select>
                         </div>
                     </div>

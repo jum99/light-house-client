@@ -31,7 +31,6 @@ const MakeAdmin = () => {
     <div className="admin-section">
       <h2 className="text-center ">Make Admin</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
-
         <div class="mb-3">
           <label className="form-label">Email</label>
           <input type="email" name="email" class="form-control" placeholder="Enter Admin Email" {...register("email")} required />

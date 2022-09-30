@@ -2,16 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../style/Product.css';
 
-
 const Product = () => {
 
-
     const [product, setProduct] = useState([]);
+
     useEffect(() => {
         fetch('https://fast-dawn-24079.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProduct(data.reverse()))
-    }, [])
+    }, []);
 
     return (
         <div className="container mt-5">

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-
 const ManageOrder = () => {
 
     const [allOrder, setAllOrder] = useState([]);
@@ -13,7 +12,6 @@ const ManageOrder = () => {
 
     return (
         <div className="admin-section">
-
             <div className=" mt-3">
                 <div className="d-flex">
                     <h2>Manage Orders</h2>

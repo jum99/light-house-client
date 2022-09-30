@@ -4,8 +4,6 @@ import Header from '../sections/Header';
 import Product from '../sections/Product';
 import SlideShow from '../sections/SlideShow';
 import Testimonials from '../sections/Testimonials';
-import AboutUs from '../sections/AboutUs';
-
 
 const Home = () => {
     return (

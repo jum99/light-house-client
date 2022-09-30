@@ -3,6 +3,7 @@ import '../../style/Footer.css';
 import Logo from '../../images/logo.png';
 
 const Footer = () => {
+
     return (
         <>
             <div className="footer">
@@ -11,8 +12,10 @@ const Footer = () => {
                         <div className="col-6 d-flex justify-content-center">
                             <div>
                                 <div>
-                                    <img src={Logo} alt="" className="img-fluid" />
-
+                                    <img style={{
+                                        width: '225px',
+                                        height: '60px'
+                                    }} src={Logo} alt="" className="img-fluid mb-3" />
                                 </div>
                                 <p>Lighthouse always provide best and quality products to their customers. </p>
                             </div>
@@ -20,9 +23,8 @@ const Footer = () => {
                         <div className="col-6 d-flex justify-content-center">
                             <div>
                                 <h3>Contact</h3>
-                                <p>250 northern blwd suite 3254-1033 albany,ny 124-1200, UK.</p>
+                                <p><i class="fas fa-map-marker color-fruit"></i> 250 northern blwd suite 3254-1033 albany,ny 124-1200, UK.</p>
                                 <h6><i class="fas fa-phone-alt color-fruit"></i> +871-888-88888</h6>
-                                <h6><i class="fas fa-map-marker color-fruit"></i> Contact us</h6>
                             </div>
                         </div>
                         <div className="col-6 d-flex justify-content-center">
@@ -31,7 +33,7 @@ const Footer = () => {
                                 <h6>Feature</h6>
                                 <h6>Careers</h6>
                                 <h6>Blog Post</h6>
-                                <h6>Help&Support</h6>
+                                <h6>Help & Support</h6>
                             </div>
                         </div>
                         <div className="col-6 d-flex justify-content-center">
@@ -49,8 +51,6 @@ const Footer = () => {
             <div className="footer_bottom">
                 <p className="text-center">&copy;2021 LightHouse Shop</p>
             </div>
-
-
         </>
     );
 };

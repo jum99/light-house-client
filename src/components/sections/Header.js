@@ -12,10 +12,9 @@ const Header = () => {
 
     return (
         <div className="header-bg">
-
             <Navbar expand="lg">
-                <Link to="/home" className="nav-link"> <Navbar.Brand ><img src={Logo} className="logo-img mb-4 ms-2 img-fluid" alt="logo" /></Navbar.Brand></Link>
-                <Navbar.Toggle style={{ backgroundColor: '#e2f2ef' }} aria-controls="basic-navbar-nav" />
+                <Link to="/home" className="nav-link"> <Navbar.Brand ><img src={Logo} className="logo-img mb-3 ms-2 img-fluid" alt="logo" /></Navbar.Brand></Link>
+                <Navbar.Toggle style={{ backgroundColor: '#e2f2ef', marginRight: "15px" }} aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse className='ms-3' id="basic-navbar-nav">
 
                     <Nav className="ms-auto">
@@ -25,10 +24,11 @@ const Header = () => {
 
                         {currentUser ? (
                             <div className="d-flex align-items-center">
+                                <Link className="dashboard me-3 fw-600 fs-4 text-white" to="/dashboard">Dashboard</Link>
+
                                 <span className=" text-white me-3 fw-600 fs-4">{currentUser.displayName}</span>
 
-                                <Link className="dashboard me-3 fw-600 fs-4 text-white" to="/dashboard">Dashboard</Link>
-                                <span onClick={logout} className="text-white fw-600 fs-4 me-3">Log Out</span>
+                                <span onClick={logout} className="text-white fw-600 fs-4 me-3">Log out</span>
                             </div>
                         ) : (
 

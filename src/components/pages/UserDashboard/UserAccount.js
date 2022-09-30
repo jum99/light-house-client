@@ -5,12 +5,11 @@ import Logo from '../../../images/logo.png';
 import { useRouteMatch } from 'react-router-dom';
 import { useAuth } from './../../../contexts/AuthContext';
 
-
 const UserAccount = () => {
 
     let { url } = useRouteMatch();
-    const { logout } = useAuth();
 
+    const { logout } = useAuth();
     const { currentUser } = useAuth();
     const [isAdmin, setIsAdmin] = useState(false);
 
@@ -93,10 +92,11 @@ const UserAccount = () => {
 
                                 }
 
-                                <div className="d-flex " style={{ marginTop: '50%' }}>
+                                <div className="d-flex" style={{ marginTop: '50%' }}>
 
-                                    <Link onClick={logout} to="/login" >  <i className="fas fa-sign-out-alt color-fruit fs-15"></i></Link>
-                                    <Link to="/home" className="ms-auto"> <i className="fas fa-home color-fruit  fs-15"></i></Link>
+                                    <Link onClick={logout} to="/login" >
+                                        <i class="fa-solid fa-right-from-bracket color-fruit fs-15"></i></Link>
+                                    <Link to="/home" className="ms-auto"> <i className="fa-solid fa-house color-fruit  fs-15"></i></Link>
                                 </div>
                             </ul>
                         </div>
