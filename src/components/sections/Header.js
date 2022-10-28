@@ -13,7 +13,9 @@ const Header = () => {
     return (
         <div className="header-bg">
             <Navbar expand="lg">
-                <Link to="/home" className="nav-link"> <Navbar.Brand ><img src={Logo} className="logo-img mb-3 ms-2 img-fluid" alt="logo" /></Navbar.Brand></Link>
+                <Link to="/home" className="nav-link">
+                    <Navbar.Brand ><img src={Logo} className="logo-img mb-3 ms-2 img-fluid" alt="logo" /></Navbar.Brand>
+                </Link>
                 <Navbar.Toggle style={{ backgroundColor: '#e2f2ef', marginRight: "15px" }} aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse className='ms-3' id="basic-navbar-nav">
 

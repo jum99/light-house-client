@@ -12,7 +12,7 @@ const AddProduct = () => {
             name: data.name,
             price: data.price,
             category: data.category,
-            shortDis: data.shortDis,
+            shortDescription: data.shortDescription,
             description: data.description,
             imageURL: imageURL
         }
@@ -28,7 +28,7 @@ const AddProduct = () => {
             },
             body: JSON.stringify(addProducts)
         })
-            .then(res => console.log('admin added', res))
+            .then(res => console.log('product added', res))
     };
 
     //image upload
@@ -54,13 +54,13 @@ const AddProduct = () => {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-3">
                     <label for="exampleInputEmail1" className="form-label">Product Name</label>
-                    <input type="text" className="form-control" name="title" placeholder="product name"  {...register("name")} required />
+                    <input type="text" className="form-control" name="name" placeholder="product name"  {...register("name")} required />
                 </div>
                 <div className="row ">
                     <div className="col-md-6">
                         <div className="mb-3">
                             <label for="exampleInputEmail1" className="form-label">Price</label>
-                            <input type="number" className="form-control" name="name" placeholder=" price" {...register("price")} required />
+                            <input type="number" className="form-control" name="price" placeholder="price" {...register("price")} required />
                         </div>
                     </div>
                     <div className="col-md-6">
@@ -78,7 +78,7 @@ const AddProduct = () => {
                 </div>
                 <div className="mb-3">
                     <label for="exampleInputEmail1" className="form-label">Short Description</label>
-                    <textarea maxlength="70" type="text" className="form-control" placeholder=" short description" name="shortDis" {...register("shortDis")} required />
+                    <textarea maxlength="70" type="text" className="form-control" placeholder="short description" name="shortDescription" {...register("shortDescription")} required />
                 </div>
                 <div className="mb-3">
                     <label for="exampleInputEmail1" className="form-label">Description</label>
