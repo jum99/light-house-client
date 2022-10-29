@@ -27,7 +27,7 @@ const Product = () => {
                                     </div>
                                     <div class="card-body">
                                         <h5 className="card-title">{item.name}</h5>
-                                        <p className="card-text">{item.shortDis}</p>
+                                        <p className="card-text">{item.shortDescription}</p>
                                         <div className="d-flex align-items-center">
                                             <Link to={`/purchase/${item._id}`} className="btn regular-button">Buy Now</Link>
                                             <h5 className="color-fruit ms-auto">${item.price}</h5>
