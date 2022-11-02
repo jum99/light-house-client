@@ -21,7 +21,9 @@ const RouteDiv = () => {
     useEffect(() => {
         fetch('https://fast-dawn-24079.herokuapp.com/isAdmin', {
             method: 'POST',
-            headers: { 'content-type': 'application/json' },
+            headers: {
+                'content-type': 'application/json'
+            },
             body: JSON.stringify({ email: currentUser.email })
         })
             .then(res => res.json())

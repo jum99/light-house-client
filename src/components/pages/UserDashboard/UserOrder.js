@@ -5,17 +5,16 @@ import { useAuth } from './../../../contexts/AuthContext';
 const UserOrder = () => {
 
     const { currentUser } = useAuth();
-    const [orders, setOrders] = useState([])
+    // console.log(currentUser.displayName);
+
+    const [orders, setOrders] = useState([]);
+    // console.log(orders);
 
     useEffect(() => {
-        fetch('https://fast-dawn-24079.herokuapp.com/orders', {
-            method: 'POST',
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify({ email: currentUser.email })
-        })
+        fetch(`https://fast-dawn-24079.herokuapp.com/orders?displayName=${currentUser.displayName}`)
             .then(res => res.json())
-            .then(data => setOrders(data))
-    }, [])
+            .then((data) => setOrders(data.reverse()))
+    }, []);
 
     const deleteItem = id => {
         fetch(`https://fast-dawn-24079.herokuapp.com/cancelItem/${id}`, {
@@ -25,7 +24,7 @@ const UserOrder = () => {
             .then(result => {
                 console.log('deleted successfully', result)
                 if (result) {
-                    alert('This order is cancel! Please refresh page')
+                    alert('This order is cancelled! Please refresh page')
                 }
             })
     }
@@ -34,8 +33,9 @@ const UserOrder = () => {
         <div className="admin-section">
             <div className=" mt-3">
                 <div className="d-flex">
-                    <h2>My Orders</h2>
+                    <h2>My Orders: {orders.length} </h2>
                 </div>
+
                 <table className="table border shadow mt-3">
                     <thead className="thead-dark bg-dark" style={{ color: 'white' }} >
                         <tr>
@@ -47,6 +47,7 @@ const UserOrder = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
+
                     <tbody>
                         {
                             orders.map((pd, index) => (

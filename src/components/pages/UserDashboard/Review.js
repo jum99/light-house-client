@@ -28,7 +28,7 @@ const Review = () => {
             },
             body: JSON.stringify(reviewData)
         })
-            .then(res => console.log('admin added', res))
+            .then(res => console.log('review added', res))
     };
 
     //image upload

@@ -28,13 +28,15 @@ const SingleProduct = () => {
     const { name, imageURL, price, description } = productDetail;
 
     const onSubmit = data => {
+        // data.email = currentUser.email;
         const orderData = {
             ...currentUser,
             productName: productDetail.name,
             productPrice: productDetail.price,
             productImg: productDetail.img,
             name: data.name,
-            email: data.email,
+            // email: data.email,
+            email: currentUser.email,
             streetAddress: data.streetAddress,
             state: data.state,
             city: data.city,
