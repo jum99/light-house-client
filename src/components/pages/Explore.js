@@ -27,7 +27,7 @@ const Explore = () => {
                                         <div className="d-flex justify-content-center">
                                             <img src={item.imageURL} alt="" className="img-fluid  p-3" style={{ height: '200px', width: '200px' }} />
                                         </div>
-                                        <div class="card-body">
+                                        <div className="card-body">
                                             <h5 className="card-title">{item.name}</h5>
                                             <p className="card-text">{item.shortDescription}</p>
                                             <div className="d-flex align-items-center">

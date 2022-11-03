@@ -31,13 +31,13 @@ const MakeAdmin = () => {
     <div className="admin-section">
       <h2 className="text-center ">Make Admin</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div class="mb-3">
+        <div className="mb-3">
           <label className="form-label">Email</label>
-          <input type="email" name="email" class="form-control" placeholder="Enter Admin Email" {...register("email")} required />
+          <input type="email" name="email" className="form-control" placeholder="Enter Admin Email" {...register("email")} required />
         </div>
-        <div class="mb-3">
+        <div className="mb-3">
           <label className="form-label">Password</label>
-          <input type="password" name="password" class="form-control" placeholder="password" {...register("password")} required />
+          <input type="password" name="password" className="form-control" placeholder="password" {...register("password")} required />
         </div>
 
         <button type="submit" className="btn regular-button  mt-3">Submit</button>

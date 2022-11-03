@@ -28,15 +28,14 @@ const SingleProduct = () => {
     const { name, imageURL, price, description } = productDetail;
 
     const onSubmit = data => {
-        // data.email = currentUser.email;
+
         const orderData = {
             ...currentUser,
             productName: productDetail.name,
             productPrice: productDetail.price,
             productImg: productDetail.img,
             name: data.name,
-            // email: data.email,
-            email: currentUser.email,
+            email: data.email,
             streetAddress: data.streetAddress,
             state: data.state,
             city: data.city,
@@ -80,11 +79,11 @@ const SingleProduct = () => {
                         <div className="d-flex ">
                             <h4>Price: ${price}</h4>
                             <div className="d-flex mt-1 ms-auto me-3 color-yellow">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+                                <i className="fas fa-star"></i>
+                                <i className="fas fa-star"></i>
+                                <i className="fas fa-star"></i>
+                                <i className="fas fa-star"></i>
+                                <i className="fas fa-star"></i>
                             </div>
                             <p className="cursor-pointer">19 Customer review</p>
                         </div>
@@ -93,9 +92,9 @@ const SingleProduct = () => {
                         <p>{description}</p>
                         <div className="d-flex align-items-center cursor-pointer">
                             <h6>Share this product: </h6>
-                            <i class="fab fa-facebook-f ms-3"></i>
-                            <i class="fab fa-instagram-square ms-3"></i>
-                            <i class="fab fa-linkedin ms-3"></i>
+                            <i className="fab fa-facebook-f ms-3"></i>
+                            <i className="fab fa-instagram-square ms-3"></i>
+                            <i className="fab fa-linkedin ms-3"></i>
                         </div>
                     </div>
                 </div>
@@ -106,31 +105,31 @@ const SingleProduct = () => {
                         <div className="row ">
                             <div className="col-md-6">
                                 <div className="mb-3">
-                                    <label for="exampleInputEmail1" className="form-label">Full name</label>
+                                    <label htmlFor="exampleInputEmail1" className="form-label">Full name</label>
                                     <input defaultValue={currentUser.displayName} type="text" className="form-control" name="name"  {...register("name")} placeholder=" Full Name" required />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="mb-3">
-                                    <label for="exampleInputEmail1" className="form-label">Email address</label>
-                                    <input defaultValue={currentUser.email} type="email" className="form-control" name="email"  {...register("email")} placeholder="name@example.com" required />
+                                    <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+                                    <input type="email" className="form-control" name="email"  {...register("email")} placeholder="name@example.com" required />
                                 </div>
                             </div>
                         </div>
                         <div className="mb-3">
-                            <label for="exampleInputEmail1" className="form-label">Street Address</label>
+                            <label htmlFor="exampleInputEmail1" className="form-label">Street Address</label>
                             <input type="text" className="form-control" name="streetAddress"  {...register("streetAddress")} placeholder="House number and street name" required />
                         </div>
                         <div className="row ">
                             <div className="col-md-6">
                                 <div className="mb-3">
-                                    <label for="exampleInputEmail1" className="form-label">State</label>
+                                    <label htmlFor="exampleInputEmail1" className="form-label">State</label>
                                     <input type="text" className="form-control" name="state"  {...register("state")} placeholder=" state" required />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="mb-3">
-                                    <label for="exampleInputEmail1" className="form-label">Town/City</label>
+                                    <label htmlFor="exampleInputEmail1" className="form-label">Town/City</label>
                                     <input type="text" className="form-control" name="city"  {...register("city")} placeholder=" city" required />
                                 </div>
                             </div>
@@ -138,13 +137,13 @@ const SingleProduct = () => {
                         <div className="row ">
                             <div className="col-md-6">
                                 <div className="mb-3">
-                                    <label for="exampleInputEmail1" className="form-label">Zip code</label>
+                                    <label htmlFor="exampleInputEmail1" className="form-label">Zip code</label>
                                     <input type="text" className="form-control" name="zipCode"  {...register("zipCode")} placeholder=" zip code" required />
                                 </div>
                             </div>
                             <div className="col-md-6">
                                 <div className="mb-3">
-                                    <label for="exampleInputEmail1" className="form-label">Phone number</label>
+                                    <label htmlFor="exampleInputEmail1" className="form-label">Phone number</label>
 
                                     <input type="tel" className="form-control" name="phone"  {...register("phone")} placeholder="123-45-6785" required />
                                 </div>

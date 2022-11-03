@@ -35,9 +35,10 @@ const ManageProduct = () => {
                     <thead className="thead-dark bg-dark" style={{ color: 'white' }} >
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col"> Image</th>
+                            <th scope="col">Image</th>
                             <th scope="col">Name</th>
-                            <th scope="col">price</th>
+                            <th scope="col">Product ID</th>
+                            <th scope="col">Price</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -48,6 +49,7 @@ const ManageProduct = () => {
                                     <th scope="row">{index + 1}</th>
                                     <td><img src={pd.imageURL} alt="" className="img-fluid" style={{ width: '30px', height: '30px' }} /></td>
                                     <td>{pd.name}</td>
+                                    <td>{pd._id}</td>
                                     <td>${pd.price}</td>
                                     <td>
                                         <Link to="#" className="btn btn-outline-primary me-2 ">Edit</Link>

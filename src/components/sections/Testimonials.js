@@ -12,21 +12,6 @@ const Testimonials = () => {
             .then(data => setTestimonials(data))
     }, []);
 
-    const options = {
-        responsiveClass: true,
-        nav: false,
-        dots: false,
-        autoplay: true,
-        smartSpeed: 2000,
-        loop: true,
-        responsive: {
-            1: { items: 1 },
-            550: { items: 2 },
-            786: { items: 3 },
-            1200: { items: 3 }
-        }
-    };
-
     return (
         <section className="container">
             <div className="row ">

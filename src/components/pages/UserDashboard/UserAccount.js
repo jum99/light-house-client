@@ -25,9 +25,9 @@ const UserAccount = () => {
 
     return (
         <>
-            <div class="menubar">
+            <div className="menubar">
                 <input type="checkbox" id="btn" hidden />
-                <label for="btn" className="menu-btn">
+                <label htmlFor="btn" className="menu-btn">
                     <i className="fas fa-bars"></i>
                     <i className="fas fa-times"></i>
                 </label>
@@ -44,25 +44,25 @@ const UserAccount = () => {
                             <ul className="sidebarList">
                                 {isAdmin ? <> <div className="dropdown-container">
                                     <Link to={`${url}/manageOrder`} style={{ textDecoration: 'none', color: '#000' }} > <li className="sidebarListItem ">
-                                        <i class="fas fa-border-none color-fruit"></i>
+                                        <i className="fas fa-border-none color-fruit"></i>
                                         Manage Orders
                                     </li></Link>
                                 </div>
                                     <div className="dropdown-container">
                                         <Link to={`${url}/addProduct`} style={{ textDecoration: 'none', color: '#000' }} > <li className="sidebarListItem ">
-                                            <i class="fab fa-product-hunt color-fruit"></i>
+                                            <i className="fab fa-product-hunt color-fruit"></i>
                                             Add Product
                                         </li></Link>
                                     </div>
                                     <div className="dropdown-container">
                                         <Link to={`${url}/makeAdmin`} style={{ textDecoration: 'none', color: '#000' }} > <li className="sidebarListItem ">
-                                            <i class="fas fa-user-friends color-fruit"></i>
+                                            <i className="fas fa-user-friends color-fruit"></i>
                                             Make Admin
                                         </li></Link>
                                     </div>
                                     <div className="dropdown-container">
                                         <Link to={`${url}/manageProduct`} style={{ textDecoration: 'none', color: '#000' }} > <li className="sidebarListItem ">
-                                            <i class="fas fa-border-all color-fruit"></i>
+                                            <i className="fas fa-border-all color-fruit"></i>
                                             Manage Product
                                         </li></Link>
                                     </div>
@@ -95,7 +95,7 @@ const UserAccount = () => {
                                 <div className="d-flex" style={{ marginTop: '50%' }}>
 
                                     <Link onClick={logout} to="/login" >
-                                        <i class="fa-solid fa-right-from-bracket color-fruit fs-15"></i></Link>
+                                        <i className="fa-solid fa-right-from-bracket color-fruit fs-15"></i></Link>
                                     <Link to="/home" className="ms-auto"> <i className="fa-solid fa-house color-fruit  fs-15"></i></Link>
                                 </div>
                             </ul>

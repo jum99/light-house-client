@@ -23,8 +23,8 @@ const Footer = () => {
                         <div className="col-6 d-flex justify-content-center">
                             <div>
                                 <h3>Contact</h3>
-                                <p><i class="fas fa-map-marker color-fruit"></i> 250 northern blwd suite 3254-1033 albany,ny 124-1200, UK.</p>
-                                <h6><i class="fas fa-phone-alt color-fruit"></i> +871-888-88888</h6>
+                                <p><i className="fas fa-map-marker color-fruit"></i> 250 northern blwd suite 3254-1033 albany,ny 124-1200, UK.</p>
+                                <h6><i className="fas fa-phone-alt color-fruit"></i> +871-888-88888</h6>
                             </div>
                         </div>
                         <div className="col-6 d-flex justify-content-center">

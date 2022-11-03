@@ -53,19 +53,19 @@ const AddProduct = () => {
             <h2 className="text-center ">Add Product</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="mb-3">
-                    <label for="exampleInputEmail1" className="form-label">Product Name</label>
+                    <label htmlFor="exampleInputEmail1" className="form-label">Product Name</label>
                     <input type="text" className="form-control" name="name" placeholder="product name"  {...register("name")} required />
                 </div>
                 <div className="row ">
                     <div className="col-md-6">
                         <div className="mb-3">
-                            <label for="exampleInputEmail1" className="form-label">Price</label>
+                            <label htmlFor="exampleInputEmail1" className="form-label">Price</label>
                             <input type="number" className="form-control" name="price" placeholder="price" {...register("price")} required />
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="mb-3">
-                            <label for="exampleInputEmail1" className="form-label"> Category</label>
+                            <label htmlFor="exampleInputEmail1" className="form-label"> Category</label>
                             <select name="category"  {...register("category")} required type="text" className="form-select">
                                 <option value="1">Fancy Decorative Lights</option>
                             </select>
@@ -73,15 +73,15 @@ const AddProduct = () => {
                     </div>
                 </div>
                 <div className="mb-3">
-                    <label for="exampleInputEmail1" className="form-label">Product Image</label>
+                    <label htmlFor="exampleInputEmail1" className="form-label">Product Image</label>
                     <input type="file" onChange={handleImageUpload} className="form-control" placeholder="import image" />
                 </div>
                 <div className="mb-3">
-                    <label for="exampleInputEmail1" className="form-label">Short Description</label>
+                    <label htmlFor="exampleInputEmail1" className="form-label">Short Description</label>
                     <textarea maxlength="70" type="text" className="form-control" placeholder="short description" name="shortDescription" {...register("shortDescription")} required />
                 </div>
                 <div className="mb-3">
-                    <label for="exampleInputEmail1" className="form-label">Description</label>
+                    <label htmlFor="exampleInputEmail1" className="form-label">Description</label>
                     <textarea type="text" className="form-control" placeholder="description" name="description" {...register("description")} required />
                 </div>
                 <button type="submit" className="btn regular-button">Submit</button>

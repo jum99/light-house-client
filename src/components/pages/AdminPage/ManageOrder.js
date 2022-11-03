@@ -21,25 +21,26 @@ const ManageOrder = () => {
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Product Name</th>
-                            <th scope="col">User Name</th>
-                            <th scope="col">city</th>
-                            <th scope="col">price</th>
+                            <th scope="col">Product ID</th>
+                            <th scope="col">User Email</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Price</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
                             allOrder.map((pd, index) => (
-                                <tr>
+                                <tr key={index}>
                                     <th scope="row">{index + 1}</th>
-
                                     <td>{pd.productName}</td>
+                                    <td>{pd._id}</td>
                                     <td>{pd.email}</td>
                                     <td>{pd.city}</td>
                                     <td>${pd.productPrice}</td>
                                     <td className="d-flex">
 
-                                        <select class="form-select me-2" style={{ maxWidth: '110px' }} >
+                                        <select className="form-select me-2" style={{ maxWidth: '110px' }} >
                                             <option selected>status</option>
                                             <option value="1">Done</option>
                                             <option value="2">Pending</option>
