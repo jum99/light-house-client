@@ -14,7 +14,7 @@ const MakeAdmin = () => {
     alert('New Admin create');
     reset();
 
-    const url = `https://fast-dawn-24079.herokuapp.com/addAdmin`
+    const url = `https://light-house-server.up.railway.app/addAdmin`
     console.log(adminData)
     fetch(url, {
       method: 'POST',

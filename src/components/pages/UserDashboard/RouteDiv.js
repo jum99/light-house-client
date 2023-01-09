@@ -19,7 +19,7 @@ const RouteDiv = () => {
     const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
-        fetch('https://fast-dawn-24079.herokuapp.com/isAdmin', {
+        fetch('https://light-house-server.up.railway.app/isAdmin', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

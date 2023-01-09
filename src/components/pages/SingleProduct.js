@@ -19,7 +19,7 @@ const SingleProduct = () => {
     let { from } = location.state || { from: { pathname: "/dashboard/userOrder" } };
 
     useEffect(() => {
-        fetch(`https://fast-dawn-24079.herokuapp.com/pd/${Id}`)
+        fetch(`https://light-house-server.up.railway.app/pd/${Id}`)
             .then(res => res.json())
             .then(data => setProductDetail(data))
 
@@ -48,7 +48,7 @@ const SingleProduct = () => {
         reset();
         history.replace(from);
 
-        const url = `https://fast-dawn-24079.herokuapp.com/addOrder`
+        const url = `https://light-house-server.up.railway.app/addOrder`
         // console.log(orderData);
         fetch(url, {
             method: 'POST',

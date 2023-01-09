@@ -19,7 +19,7 @@ const AddProduct = () => {
         alert('New product added');
         reset();
 
-        const url = `https://fast-dawn-24079.herokuapp.com/addProduct`
+        const url = `https://light-house-server.up.railway.app/addProduct`
         console.log(addProducts)
         fetch(url, {
             method: 'POST',

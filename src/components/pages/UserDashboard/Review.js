@@ -19,7 +19,7 @@ const Review = () => {
         alert('Review added');
         reset();
 
-        const url = `https://fast-dawn-24079.herokuapp.com/addReview`
+        const url = `https://light-house-server.up.railway.app/addReview`
         console.log(reviewData)
         fetch(url, {
             method: 'POST',

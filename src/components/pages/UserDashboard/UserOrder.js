@@ -11,13 +11,13 @@ const UserOrder = () => {
     // console.log(orders);
 
     useEffect(() => {
-        fetch(`https://fast-dawn-24079.herokuapp.com/orders?displayName=${currentUser.displayName}`)
+        fetch(`https://light-house-server.up.railway.app/orders?displayName=${currentUser.displayName}`)
             .then(res => res.json())
             .then((data) => setOrders(data.reverse()))
     }, []);
 
     const deleteItem = id => {
-        fetch(`https://fast-dawn-24079.herokuapp.com/cancelItem/${id}`, {
+        fetch(`https://light-house-server.up.railway.app/cancelItem/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

@@ -7,7 +7,7 @@ const Testimonials = () => {
     const [testimonials, setTestimonials] = useState([]);
 
     useEffect(() => {
-        fetch('https://fast-dawn-24079.herokuapp.com/allReview')
+        fetch('https://light-house-server.up.railway.app/allReview')
             .then(res => res.json())
             .then(data => setTestimonials(data))
     }, []);

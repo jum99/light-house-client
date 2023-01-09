@@ -5,7 +5,7 @@ const ManageOrder = () => {
     const [allOrder, setAllOrder] = useState([]);
 
     useEffect(() => {
-        fetch('https://fast-dawn-24079.herokuapp.com/allOrder')
+        fetch('https://light-house-server.up.railway.app/allOrder')
             .then(res => res.json())
             .then(data => setAllOrder(data.reverse()))
     }, [])

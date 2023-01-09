@@ -7,7 +7,7 @@ const Product = () => {
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
-        fetch('https://fast-dawn-24079.herokuapp.com/products')
+        fetch('https://light-house-server.up.railway.app/products')
             .then(res => res.json())
             .then(data => setProduct(data.reverse()))
     }, []);
